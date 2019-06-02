@@ -17,6 +17,6 @@ services:
     links:
       - db
     volumes:
-      - .:/Booking
+      - 'Booking:/Booking'
     environment:
       - DATABASE_URL:postgres://dev:developer@db:5432/datex_dev?pool=5&encoding=utf-8
