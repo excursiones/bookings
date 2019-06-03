@@ -32,7 +32,6 @@ yarn-debug.log*
 /config/jwt*
 # Ignore master key for decrypting credentials and more.
 config/master.key
-config/database.yml
 Gemfile.lock
 /yarn.lock
 yarn.lock
