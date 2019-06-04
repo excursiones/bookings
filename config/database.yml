@@ -1,0 +1,13 @@
+development: &default
+  adapter: postgresql
+  database: bookings
+  min_messages: WARNING
+  pool: 5
+  username: dev
+  password: developer
+  host: db
+  url: <%= ENV['DATABASE_URL'] %>  
+
+test:
+  <<: *default
+  database: bookings
