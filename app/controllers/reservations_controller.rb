@@ -34,7 +34,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    render json: Reservation.find_by(id_user: params[:id]).to_json
+    render json: Reservation.where(:id_user => params[:id]).to_json
   rescue => error
 		render json: { error: error }, status: :bad_request
   end
