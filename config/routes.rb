@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   patch '/reservations/cancel/:id', to: 'reservations#cancel'
   get '/reservations/cancelled', to: 'reservations#cancelled'
+  get '/reservations/pending/:user', to: 'reservations#pending'
   get '/reservations/cancelled/:user', to: 'reservations#cancelled'
   get '/reservations/cancelled/excursion-package/:id', to: 'reservations#cancelled_target'
   get '/reservations/excursion-package', to: 'reservations#target'

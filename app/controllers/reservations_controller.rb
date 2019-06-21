@@ -50,6 +50,18 @@ class ReservationsController < ApplicationController
 		render json: { error: error }, status: :bad_request
   end
 
+  def pending
+    if params[:user]
+      reservation = Reservation.where id_user: params[:user], cancelled: false
+      render json: reservation.to_json
+    else
+
+      render json: Reservation.where(cancelled: false).to_json
+    end
+  rescue => error
+		render json: { error: error }, status: :bad_request
+  end
+
   def cancelled_target
     render json: Reservation.where(cancelled: true, id_excursion: params[:id]).to_json
   rescue => error
